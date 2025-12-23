@@ -1,0 +1,68 @@
+{
+  "app": {
+    "name": "DeepWeb Browser",
+    "version": "1.0.0",
+    "debug": false,
+    "logLevel": "info"
+  },
+  "browser": {
+    "defaultSearchEngine": "duckduckgo",
+    "homePage": "about:blank",
+    "newTabPage": "about:newtab",
+    "saveHistory": true,
+    "saveCookies": true,
+    "enableSessionRestore": true
+  },
+  "privacy": {
+    "httpsOnly": true,
+    "blockTracking": true,
+    "blockFingerprinting": true,
+    "dnsOverHttps": true,
+    "clearCacheOnExit": false,
+    "clearCookiesOnExit": false,
+    "blockScripts": false,
+    "blockImages": false,
+    "blockWebGL": false
+  },
+  "network": {
+    "proxy": {
+      "enabled": false,
+      "type": "socks5",
+      "host": "127.0.0.1",
+      "port": 9050
+    },
+    "vpn": {
+      "enabled": false,
+      "provider": "protonvpn",
+      "location": "US"
+    },
+    "tor": {
+      "enabled": false,
+      "port": 9050
+    }
+  },
+  "security": {
+    "encryptionLevel": "high",
+    "saltLength": 32,
+    "hashAlgorithm": "sha256",
+    "certValidation": true,
+    "pinningEnabled": true
+  },
+  "storage": {
+    "type": "sqlite",
+    "path": "~/.deepweb-browser",
+    "encryption": true,
+    "backupInterval": 3600000
+  },
+  "ui": {
+    "theme": "dark",
+    "language": "en-US",
+    "fontSize": 14,
+    "compactMode": false
+  },
+  "extensions": {
+    "enabled": true,
+    "whitelist": [],
+    "blacklist": []
+  }
+}

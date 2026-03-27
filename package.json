@@ -1,0 +1,79 @@
+{
+  "name": "deepweb-browser",
+  "version": "1.0.0",
+  "description": "An industry-grade deepweb browser with advanced privacy and security features",
+  "main": "dist/main/index.js",
+  "homepage": "https://github.com/Satyaprasad7naik/deepweb-browser",
+  "author": "DeepWeb Browser Team",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "package": "electron-builder --publish never",
+    "package:win": "npm run build && electron-builder --win",
+    "package:mac": "npm run build && electron-builder --mac",
+    "package:linux": "npm run build && electron-builder --linux",
+    "test": "jest --passWithNoTests",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint src --ext .ts,.tsx",
+    "format": "prettier --write \"src/**/*.{ts,tsx,css,json}\"",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.8.0",
+    "redux": "^4.2.0",
+    "react-redux": "^8.0.5",
+    "@reduxjs/toolkit": "^1.9.1",
+    "axios": "^1.3.2",
+    "crypto-js": "^4.1.0",
+    "electron-log": "^4.4.8",
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.10",
+    "@types/node": "^18.11.18",
+    "@types/crypto-js": "^4.1.1",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1",
+    "electron-vite": "^2.0.0",
+    "vite": "^5.0.0",
+    "typescript": "^5.3.3",
+    "jest": "^29.3.1",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "ts-jest": "^29.0.3",
+    "prettier": "^2.8.2",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^9.1.0"
+  },
+  "build": {
+    "appId": "com.deepweb.browser",
+    "productName": "DeepWeb Browser",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*"
+    ],
+    "mac": {
+      "target": ["dmg", "zip"],
+      "icon": "public/icon.icns"
+    },
+    "win": {
+      "target": ["nsis", "zip"],
+      "icon": "public/icon.ico"
+    },
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "icon": "public/icon.png"
+    }
+  }
+}

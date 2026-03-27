@@ -51,7 +51,7 @@ export class VpnService extends EventEmitter {
       this.originalIp = await this.getPublicIp();
 
       // Initiate VPN connection through provider
-      await this.setupProxy(this.config);
+      await this.setupProxy();
 
       // Verify IP changed (real VPN would change the IP)
       this.currentIp = await this.getPublicIp();
@@ -121,7 +121,7 @@ export class VpnService extends EventEmitter {
     }
   }
 
-  private async setupProxy(_config: VpnConfig): Promise<void> {
+  private async setupProxy(): Promise<void> {
     // In a real implementation, this would:
     // 1. Download OpenVPN/WireGuard config from provider
     // 2. Start VPN tunnel process

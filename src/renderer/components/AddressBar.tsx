@@ -48,14 +48,14 @@ const AddressBar: React.FC<AddressBarProps> = ({ url, onNavigate, isLoading }) =
   };
 
   const getSecurityIcon = () => {
-    if (isBlank) return '🔍';
-    if (isSecure) return '🔒';
+    if (isBlank) {return '🔍';}
+    if (isSecure) {return '🔒';}
     return '⚠️';
   };
 
   const getSecurityClass = () => {
-    if (isBlank) return '';
-    if (isSecure) return 'secure';
+    if (isBlank) {return '';}
+    if (isSecure) {return 'secure';}
     return 'insecure';
   };
 

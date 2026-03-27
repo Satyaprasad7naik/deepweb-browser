@@ -16,13 +16,13 @@ const PrivacyBadge: React.FC<PrivacyBadgeProps> = ({ report, isAnalyzing }) => {
   const [showPopup, setShowPopup] = useState(false);
 
   const getRiskClass = () => {
-    if (!report) return 'unknown';
+    if (!report) {return 'unknown';}
     return report.riskLevel.toLowerCase();
   };
 
   const getRiskIcon = () => {
-    if (isAnalyzing) return '⏳';
-    if (!report) return '🛡️';
+    if (isAnalyzing) {return '⏳';}
+    if (!report) {return '🛡️';}
     switch (report.riskLevel) {
       case 'LOW':
         return '🟢';

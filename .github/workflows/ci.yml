@@ -1,37 +1,72 @@
-name: CI — DeepWeb Browser
+name: 🚀 CI — DeepWeb Browser
 
 on:
   push:
-    branches: [main]
+    branches: [ main, develop ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  build-and-test:
+  # ── Job 1: Lint + Type Check + Test ──────────────────────────────────────
+  quality:
+    name: ✅ Quality Check
     runs-on: ubuntu-latest
-    
-    strategy:
-      matrix:
-        node-version: [18, 20]
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js 20
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
       - name: Type check
-        run: npx tsc --noEmit -p tsconfig.node.json
+        run: npm run type-check
+
+      - name: Lint
+        run: npm run lint
 
       - name: Run tests
-        run: npm test
+        run: npm run test:coverage
 
-      - name: Build
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        continue-on-error: true
+
+  # ── Job 2: Build on all platforms ────────────────────────────────────────
+  build:
+    name: 🏗️ Build (${{ matrix.os }})
+    needs: quality
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build app
         run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-${{ matrix.os }}
+          path: dist/
+          retention-days: 7

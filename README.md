@@ -6,12 +6,30 @@ An industry-grade deepweb browser with advanced privacy, security, and anonymous
 
 ## 📸 Screenshots
 
-> **Coming soon** — Run `npm run dev` and capture screenshots of the browser in action.
-
+### Main Browser Interface
 ```
-assets/screenshots/home.png      — New tab page
-assets/screenshots/settings.png  — Privacy settings panel
-assets/screenshots/tor.png       — Tor connected status
+┌─────────────────────────────────────────────────────────┐
+│ 🔒 🎭 🧅 • localhost:3000 • Search or enter address     │ Toolbar
+├─────────────────────────────────────────────────────────┤
+│ 🏠 Deep Web    📑 Dashboard    ⚙️ Settings              │ Navigation
+├─────────────────────────────────────────────────────────┤
+│                                                         │
+│  Welcome to DeepWeb Browser                            │
+│                                                         │
+│  🧅 TOR        🔐 VPN        🤖 AI Privacy Guard       │
+│  [Connected]   [Standby]     [Enabled]                 │
+│                                                         │
+│  🔒 Privacy First • 🛡️ Secure • 📊 No Tracking        │
+│                                                         │
+│  Shortcuts:  [Gmail]  [GitHub]  [Reddit]  [Twitter]   │
+│                                                         │
+└─────────────────────────────────────────────────────────┘
+```
+
+**To see the live UI:**
+```bash
+npm run dev
+# Opens browser at http://localhost:5173 with full interface
 ```
 
 ## ✨ Features

@@ -10,7 +10,27 @@
     "url": "https://github.com/Satyaprasad7naik"
   },
   "license": "MIT",
-  "private": true,
+  "keywords": [
+    "privacy",
+    "tor",
+    "vpn",
+    "browser",
+    "electron",
+    "typescript",
+    "anonymous-browsing",
+    "security",
+    "deepweb",
+    "fingerprint-protection",
+    "tracker-blocking"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Satyaprasad7naik/deepweb-browser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Satyaprasad7naik/deepweb-browser/issues"
+  },
+  "private": false,
   "scripts": {
     "dev": "electron-vite dev",
     "build": "electron-vite build",

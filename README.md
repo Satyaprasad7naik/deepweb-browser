@@ -1,8 +1,10 @@
 # DeepWeb Browser
 
-![CI](https://github.com/Satyaprasad7naik/deepweb-browser/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/Satyaprasad7naik/deepweb-browser/actions/workflows/ci.yml/badge.svg) ![Status](https://img.shields.io/badge/status-actively%20maintained-brightgreen) ![Last Updated](https://img.shields.io/badge/updated-March%202026-blue)
 
 An industry-grade deepweb browser with advanced privacy, security, and anonymous browsing capabilities. Built with Electron + React + TypeScript, featuring Tor integration, VPN support, and AI-powered privacy analysis.
+
+> **Note:** This project is under active development with recent commits and continuous improvements to privacy, security, and user experience.
 
 ## 📸 Screenshots
 
